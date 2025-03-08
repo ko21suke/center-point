@@ -1,0 +1,19 @@
+modules:
+  pcd_encoder:
+    # name: DynamicVoxelEncoder
+    name: VoxelFeatureExtractor
+  backbone:
+    name: SpMiddleResnetFHD
+  neck:
+    enabled: True
+    name: RPN
+  center_head:
+    name: CenterHead
+
+  # Implement the second stage modules if you want to use the second stage
+  second_stage_modules:
+    enabled: False
+    bev_feature_extractor:
+      name: BEVFeatureExtractor
+    roi_head:
+      name: ROIHead

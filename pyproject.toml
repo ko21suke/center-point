@@ -1,0 +1,19 @@
+[project]
+name = "center-point"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "addict>=2.4.0",
+    "apex>=0.9.10.dev0",
+    "easydict",
+    "numba",
+    "nuscenes-devkit",
+    "open3d>=0.19.0",
+    "pyyaml",
+    "requests>=2.32.3",
+    "terminaltables>=3.1.10",
+    "torch",
+    "torchvision",
+]

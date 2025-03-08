@@ -1,0 +1,30 @@
+# Convert The config format from yaml to to be able to read tuple as to be immutable.
+modules:
+  arch: PointPillar
+  pcd_encoder:
+    name: PillarFeatureNet
+    num_input_features: 5
+    num_filters: [64]
+    with_distance: False
+    voxel_size: [0.2, 0.2, 8]
+    pc_range: [-51.2, -51.2, -5.0, 51.2, 51.2, 3.0]
+    norm_cfg: null # null -> None
+    virtual: False # basically, it is not used
+  backbone:
+    name: PointPillarsScatter
+    num_input_features: 64
+    # ds_factor: 1
+
+  neck:
+    enabled: True
+    name: RPN
+  center_head:
+    name: CenterHead
+
+  # Implement the second stage modules if you want to use the second stage
+  second_stage_modules:
+    enabled: False
+    bev_feature_extractor:
+      name: BEVFeatureExtractor
+    roi_head:
+      name: ROIHead
